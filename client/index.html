@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates delivery Dapp</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="card card-body bg-dark rounded-0 mb-4">
+              <h2>
+                <span class="material-icons"> grid_view </span>
+                Certificate delivery Dapp
+              </h2>
+              <h4 class="text-muted">Mint NFT certificates for your students</h4>
+              <h6 class="text-muted d-flex align-items-center"> <span class="material-icons mx-2"> person </span> Juan Benitez</h6>
+              <h6 class="text-muted d-flex align-items-center"><span class="material-icons mx-2"> source </span> 
+                <a href="https://github.com/juanbenitez/blockchain-developer-bootcamp-final-project" target="_blank">
+                  Blockchain developer bootcamp final project 2021 
+                </a>
+              </h6>
+              <div class="d-flex align-items-center">
+                <div>
+                    <button id="connectEthButton" class="btn btn-primary m-3 connectEthButton">Connect your Wallet</button>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <span class="material-icons"> account_balance_wallet </span>
+                <span class="ms-2 mx-2">Wallet: </span>
+                <span class="showAccount"></span>
+              </div>
+              
+            </div>
+  
+            <div class="card card-body bg-dark rounded-0 mb-4">
+              <h2>
+                <span class="material-icons"> history_edu </span>
+                My Certificates
+              </h2>
+              <h4 class="text-muted"></h4>
+              <h6 class="text-muted">You can see all your tokens on https://testnets.opensea.io/ </h6>
+              <div class="d-flex align-items-center">
+                
+                <div id="my-certificates" class="d-block ms-2"> </div>
+              </div>
+            </div>
+
+            <form id="certForm" class="card card-body bg-dark mb-4">
+             
+              <h4 class="d-flex align-items-center"> 
+                <span class="material-icons mx-2"> note_add </span> 
+                Create new certificate
+              </h4>
+              <input
+                type="text"
+                id="title"
+                class="form-control bg-dark border-0 rounded-0 text-light my-4"
+                placeholder="write a certificate title"
+                autofocus
+              />
+              <input
+                type="number"
+                id="validDays"
+                class="form-control bg-dark border-0 rounded-0 text-light my-4"
+                placeholder="how many days the certificate is valid for"
+              ></input>
+              <button class="btn btn-primary">Create</button>
+            </form>
+
+            <form id="statusForm" class="card card-body bg-dark">
+              <h4 class="d-flex align-items-center">
+                <span class="material-icons mx-2"> edit </span>
+                Change certificate status
+              </h4>
+              <input
+                type="number"
+                id="certificateId"
+                class="form-control bg-dark border-0 rounded-0 text-light my-4"
+                placeholder="the certificate ID you want to change status"
+              ></input>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status" value="1" checked>
+                <label class="form-check-label" for="publish-opt">
+                  Publish
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="status" value="2" >
+                <label class="form-check-label" for="close-opt">
+                  Close
+                </label>
+              </div>
+              <button class="btn btn-primary">Change status</button>
+            </form>
+
+          </div>
+          <div class="col-md-7">
+            <div id="certList"></div>
+          </div>
+        </div>
+      </div>
+
+     <!-- toast notifications -->
+      <!-- error notifications --> 
+      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="errorToast" class="toast hide bg-danger text-white fade" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header bg-danger text-white">
+            <span class="material-icons"> error </span>
+            <strong class="me-auto">Error</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div id="error-toast-text" class="toast-body bg-red-200">
+            toast message
+          </div>
+        </div>
+      </div>
+
+      <!-- success notifications --> 
+      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="successToast" class="toast hide bg-success text-white fade" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header bg-success text-white">
+            <span class="material-icons"> thumb_up </span>
+            <strong class="me-auto">Awesome</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div id="success-toast-text" class="toast-body bg-green-200">
+            toast message
+          </div>
+        </div>
+      </div>
+
+      <!-- info notifications --> 
+      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="infoToast" class="toast hide bg-info text-white fade" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header bg-info text-white">
+            <span class="material-icons"> info </span>
+            <strong class="me-auto">Info</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div id="info-toast-text" class="toast-body bg-blue-200">
+            toast message
+          </div>
+        </div>
+      </div>
+
+      <script src="/libs/web3/dist/web3.min.js"></script>
+      <script src="/libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+      <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="./dapp.js"></script>
+      <script src="./ui.js"></script> 
+    
+</body>
+</html>

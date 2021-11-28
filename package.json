@@ -1,0 +1,35 @@
+{
+  "name": "blockchain-developer-bootcamp-final-project",
+  "version": "1.0.0",
+  "description": "### A platform for issuing certifications and badges The main idea is to build a platform that is able to issue courses certifications and skill badges based on NFTs; a solution for recognizing skills, capabilities, and achievements.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanbenitez/blockchain-developer-bootcamp-final-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juanbenitez/blockchain-developer-bootcamp-final-project/issues"
+  },
+  "homepage": "https://github.com/juanbenitez/blockchain-developer-bootcamp-final-project#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "bootstrap": "^5.1.3",
+    "dotenv": "^10.0.0",
+    "lite-server": "^2.6.1"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "chai": "^4.3.4"
+  }
+}

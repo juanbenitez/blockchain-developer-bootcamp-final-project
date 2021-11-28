@@ -1,0 +1,4 @@
+Network name:     Rinkeby
+Contract address: 0xac42788aE69484D2A1C757224e11fA42Db14F448
+
+https://rinkeby.etherscan.io/address/0xac42788aE69484D2A1C757224e11fA42Db14F448
