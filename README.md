@@ -5,15 +5,17 @@
 A platform for issuing certifications and badges
 
 The main idea is to build a platform that is able to issue courses certifications or skill badges based on NFTs.
-## Deployed demo dapp
-**Rinkeby deployed contract address:**
-`deplyed address`
+## Deployed demo
+**Frontend URL:** `frontend url`
 
-**Frontend URL:**
-`frontend url`
+**Contract address:**`deplyed address`
+
+**Ethereum testnet:** `rinkeby`
 
 **Admin account data (this account was created only to test this demo project):**
+
 **Address:** `address`
+
 **Private key:** `key`
 
 ## Directory structure
@@ -28,6 +30,8 @@ The main idea is to build a platform that is able to issue courses certification
 
 `tests`
 
+## Installing locally and running tests
+
 ### Prerequisites
 - Node >= v14
 - npm >= 6.14.15
@@ -35,8 +39,7 @@ The main idea is to build a platform that is able to issue courses certification
 - Ganache v2.5.4 
 - Solidity - 0.8.0 (solc-js)
 - Web3.js v1.5.3
-### Installing locally and running tests
-#### Contract local deploy
+#### Local contract deploy
 
 1. `npm install` in project root (will install Truffle and dependencies)
 2. Install and run Ganache (local testnet), use port 7545 and network id 1337
@@ -44,13 +47,13 @@ The main idea is to build a platform that is able to issue courses certification
 4. `truffle migrate --reset --network development` 
 5. `truffle test` 
 
-#### Front-end local deploy
-1. Start the dapp frontend `npm run dev` (on http://localhost:3000/ )
+#### Local front-end deploy
+1. Start the dapp frontend: `npm run dev` (on http://localhost:3000/ )
 2. Set Metamask local testnet, use http://localhost:7545 and network id 1337
 
 #### Setting TUTOR role
 
-First Ganache account address is granted with all roles. If you need to grant TUTOR role to other accounts you can use a utility script located in `scripts` folder.
+The first Ganache account address is granted with all roles. If you need to grant the TUTOR role to other accounts you can use a utility script located in `scripts` folder.
 
 1. open file `grant_tutor_role.js` and set this lines:
 
