@@ -1,6 +1,7 @@
 # Blockchain developer bootcamp final project 2021
 
-## Project description
+## Certificate delivery dapp
+
 A platform for issuing certifications and badges
 
 The main idea is to build a platform that is able to issue courses certifications or skill badges based on NFTs.
@@ -18,9 +19,13 @@ The main idea is to build a platform that is able to issue courses certification
 ## Directory structure
 
 `client` (frontend dapp)
+
 `contracts`
+
 `migrations`
+
 `scripts`
+
 `tests`
 
 ### Prerequisites
@@ -33,28 +38,28 @@ The main idea is to build a platform that is able to issue courses certification
 ### Installing locally and running tests
 #### Contract local deploy
 
-1.- `npm install` in project root (will install Truffle and dependencies)
-2.- Install and run Ganache (local testnet), use port 7545 and network id 1337
-3.- `truffle compile` 
-4.- `truffle migrate --reset --network development` 
-5.- `truffle test` 
+1. `npm install` in project root (will install Truffle and dependencies)
+2. Install and run Ganache (local testnet), use port 7545 and network id 1337
+3. `truffle compile` 
+4. `truffle migrate --reset --network development` 
+5. `truffle test` 
 
 #### Front-end local deploy
-1.- Start the dapp frontend `npm run dev` (on http://localhost:3000/ )
-2.- Set Metamask local testnet, use http://localhost:7545 and network id 1337
+1. Start the dapp frontend `npm run dev` (on http://localhost:3000/ )
+2. Set Metamask local testnet, use http://localhost:7545 and network id 1337
 
 #### Setting TUTOR role
 
 First Ganache account address is granted with all roles. If you need to grant TUTOR role to other accounts you can use a utility script located in `scripts` folder.
 
-1.- open file `grant_tutor_role.js` and set this lines:
+1. open file `grant_tutor_role.js` and set this lines:
 
 ```
 const adminAddress      = "your admin address"; // admin
 const authorizedAddress = "your new tutor address"; // new authorized tutor
 ```
 
-2.- run `truffle exec scripts/grant_tutor_role.js` 
+2. run `truffle exec scripts/grant_tutor_role.js` 
 
 ## Video demo
 
