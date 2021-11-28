@@ -2,13 +2,26 @@
 
 ## Certificate delivery dapp
 
-A platform for issuing certifications and badges
+Decentralized application for managing and delivering NFT certifications/badges. 
 
 The main idea is to build a platform that is able to issue courses certifications or skill badges based on NFTs.
+
+`Tutors` will be able to create and publish `Certificates` while `students` will be able to mint any published certificate.
+
+Main features would be:
+
+- Manage certificates: create / update data
+
+- Issue the certificate to students
+
+- Verify and prove the ownership of certificates.
+
+  
+
 ## Deployed demo
 **Frontend URL:** `frontend url`
 
-**Contract address:**`deplyed address`
+**Contract address:**`0xac42788aE69484D2A1C757224e11fA42Db14F448`
 
 **Ethereum testnet:** `rinkeby`
 
@@ -71,53 +84,40 @@ const authorizedAddress = "your new tutor address"; // new authorized tutor
 
 ## Project details
 
-Each certificate will be an NFT so students could redeem them individually and prove their ownership.
+Each certificate will be an ERC721 NFT so students could redeem them individually and prove their ownership.
 
-- each course will have its own badge image
-- course details
+- NFT data certificates will be fully on-chain including the token image by using SVG code.
+- Certificate details:
   - id
-  - name
-  - type
-  - is enable
-  - image
-  - a students collection
-  - a educators collection
+  - tittle
+  - status
+  - issued by
+  - issued date
+  - valid days
 
 ### Functions
 
-**owner only functions**
+**TUTOR functions**
 
-- create a new badge/cert/course 
+- create a new certificate
+- publish a certificate
+- register a new tutor 
 
-**educators only functions**
+**STUDENT functions**
 
-- enable/disable a course
+- mint a certificate
 
-**students only functions**
+**Public functions**
 
-- register in a course
-- redeem a badge/cert
-  - if badge/cert is enable
-  - if student is registered in the course
-
-**public functions**
-
-- verify if a student have a course badge
-
-### References
-https://info.credly.com/about-us
+- verify if a student owns a certificate
 
 ### Proposed Structures 
 
-courses = mapping [uint] => course struct
-
-students = mapping [address] => array [course struct]
-
-
-### Security
-See [avoiding_common_attacks.md]()
+certificates = mapping [uint] => certificate struct
 
 ### Future improvements
-- each TUTOR only controls his own certificates
-- unique SVG for each certificate (randomly generated could be fun to implment)
-- more data could be attached to a certificate off-chain
+- Each TUTOR should only controls its created certificates.
+- Unique SVG for each certificate (randomly generated could be fun to implement)
+- More data could be attached to a certificate off-chain.
+- Public verification is implemented in the contract but not in the front-end.
+- A way to 'pre approve' students to mint a certificate, could be interesting to be able to automate the approvement when the student delivers a task or finish some goal in a course.
