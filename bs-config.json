@@ -2,10 +2,7 @@
     "server": {
         "baseDir": [
             "./client"
-        ],
-        "routes":{
-            "/libs": "./node_modules"
-        }
+        ]
     },
     "port":"3000",
     "files": ["./client/**/*.{html,htm,css,js}"]

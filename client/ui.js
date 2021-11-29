@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     App.init();
-
    
     const statusForm = document.querySelector("#statusForm");
     statusForm.addEventListener("submit", (e) => {
@@ -38,9 +37,6 @@ async function getAccount() {
     showAccount.innerHTML = currentAccount;
   }
 
-/**
- * 
- */
 const certForm = document.querySelector("#certForm");
   
 certForm.addEventListener("submit", (e) => {
@@ -52,20 +48,9 @@ certForm.addEventListener("submit", (e) => {
   App.createCertification(title, validDays);
 });
 
-
 /***********************************************************/
 /* Handle user accounts and accountsChanged (per EIP-1193) */
 /***********************************************************/
-
-/* ethereum
-  .request({ method: 'eth_accounts' })
-  .then(handleAccountsChanged)
-  .catch((err) => {
-    // Some unexpected error.
-    // For backwards compatibility reasons, if no accounts are available,
-    // eth_accounts will return an empty array.
-    console.error(err);
-  }); */
 
 // Note that this event is emitted on page load.
 // If the array of accounts is non-empty, you're already
