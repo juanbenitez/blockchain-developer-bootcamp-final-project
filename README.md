@@ -27,36 +27,38 @@ Main features would be:
 
 ## Directory structure
 
-`client` (frontend dapp)
+`/client` (frontend dapp)
 
-`contracts`
+`/contracts`
 
-`migrations`
+`/migrations`
 
-`scripts`
+`/scripts`
 
-`tests`
+`/tests`
 
 ## Installing locally and running tests
 
-### Prerequisites
+#### Prerequisites
 - Node >= v14
 - npm >= 6.14.15
 - Truffle v5.4.14 (core: 5.4.14)
 - Ganache v2.5.4 
 - Solidity - 0.8.0 (solc-js)
 - Web3.js v1.5.3
-#### Local contract deploy
+#### Local contract build & deploy
 
-1. `npm install` in project root (will install Truffle and dependencies)
-2. Install and run Ganache (local testnet), use port 7545 and network id 1337
-3. `truffle compile` 
-4. `truffle migrate --reset --network development` 
-5. `truffle test` 
+1. `git clone https://github.com/juanbenitez/blockchain-developer-bootcamp-final-project.git`
+2. `npm install` in project root (will install Truffle and dependencies)
+3. Install and run Ganache (local testnet), use port 7545 and network id 1337
+4. `truffle compile` 
+5. `truffle migrate --reset --network development` 
+6. `truffle test` 
 
-#### Local front-end deploy
-1. Start the dapp frontend: `npm run dev` (on http://localhost:3000/ )
-2. Set Metamask local testnet, use http://localhost:7545 and network id 1337
+#### Local front-end run
+1. Copy file `/build/contracts/Certification.json`  to  `/client` folder.
+2. Start the dapp frontend: `npm run dev` (on http://localhost:3000/ )
+3. Set Metamask local testnet, use http://localhost:7545 and network id 1337
 
 #### Setting TUTOR role
 
