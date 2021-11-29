@@ -19,9 +19,9 @@ Main features would be:
   
 
 ## Deployed demo
-**Frontend URL:** `https://adoring-bohr-8a41e9.netlify.app/`
+**Frontend URL:** https://adoring-bohr-8a41e9.netlify.app/
 
-**Contract address:**`0xac42788aE69484D2A1C757224e11fA42Db14F448`
+**Contract address:** [0xac42788aE69484D2A1C757224e11fA42Db14F448](https://rinkeby.etherscan.io/address/0xac42788aE69484D2A1C757224e11fA42Db14F448)
 
 **Ethereum testnet:** `rinkeby`
 
