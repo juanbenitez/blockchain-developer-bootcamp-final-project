@@ -25,12 +25,6 @@ Main features would be:
 
 **Ethereum testnet:** `rinkeby`
 
-**Admin account data (this account was created only to test this demo project):**
-
-**Address:** `address`
-
-**Private key:** `key`
-
 ## Directory structure
 
 `client` (frontend dapp)
@@ -79,7 +73,7 @@ const authorizedAddress = "your new tutor address"; // new authorized tutor
 
 ## Video demo
 
-- video url here
+- https://youtu.be/s8qNk6JjLxU
 
 ## My public Ethereum address for certification
 `0x36619E81F6BA88104E64D7ac58Fb5A5a44Cc1855`
@@ -96,7 +90,7 @@ Each certificate will be an ERC721 NFT so students could redeem them individuall
   - issued by
   - issued date
   - valid days
-- Only certificates in `published` status could be redeemed.
+- Only certificates in `published` status could be redeemed/minted.
 
 ### Functions
 
