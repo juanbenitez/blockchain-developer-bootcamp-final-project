@@ -37,5 +37,7 @@ Role-based access control was implemented to protect and authorize contract's fu
 ## References
 
 https://swcregistry.io/
+
 https://docs.soliditylang.org/en/develop/security-considerations.html#tx-origin
+
 https://consensys.net/blog/developers/solidity-best-practices-for-smart-contract-security/

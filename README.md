@@ -19,7 +19,7 @@ Main features would be:
   
 
 ## Deployed demo
-**Frontend URL:** `frontend url`
+**Frontend URL:** `https://adoring-bohr-8a41e9.netlify.app/`
 
 **Contract address:**`0xac42788aE69484D2A1C757224e11fA42Db14F448`
 
@@ -79,7 +79,9 @@ const authorizedAddress = "your new tutor address"; // new authorized tutor
 
 ## Video demo
 
-## Public Ethereum address for certificate
+- video url here
+
+## My public Ethereum address for certification
 `0x36619E81F6BA88104E64D7ac58Fb5A5a44Cc1855`
 
 ## Project details
@@ -94,6 +96,7 @@ Each certificate will be an ERC721 NFT so students could redeem them individuall
   - issued by
   - issued date
   - valid days
+- Only certificates in `published` status could be redeemed.
 
 ### Functions
 
@@ -115,9 +118,16 @@ Each certificate will be an ERC721 NFT so students could redeem them individuall
 
 certificates = mapping [uint] => certificate struct
 
-### Future improvements
+### Simple workflow
+
+1. `tutor` user create a new certificate
+2. `tutor` user **publish** the certificate (now certificate is available to mint/redeem)
+3. `student` mint the certificate (the delivery is recorded in contract plus the ownership of the token)
+
+## Future improvements
 - Each TUTOR should only controls its created certificates.
 - Unique SVG for each certificate (randomly generated could be fun to implement)
 - More data could be attached to a certificate off-chain.
 - Public verification is implemented in the contract but not in the front-end.
 - A way to 'pre approve' students to mint a certificate, could be interesting to be able to automate the approvement when the student delivers a task or finish some goal in a course.
+- UI improvements are needed since my skills working in frontend are too basics.
