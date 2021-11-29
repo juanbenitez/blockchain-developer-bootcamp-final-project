@@ -91,10 +91,7 @@ App = {
                 ${certStatus == '1' ? "d-inline" : "d-none"} ">Published</span>
                 <span class="badge rounded-pill bg-danger 
                 ${certStatus == '2' ? "d-inline" : "d-none"} ">Closed</span>
-                <!-- input class="form-check-input" data-id="${certId}" type="checkbox" onchange="App.toggleDone(this)" 
-                ${
-                  certStatus === true && "checked"
-                } -->
+                
               </div>
             </div>
             <!-- img src="./images/certificate.svg" class="card-img-top"  alt="" -->
@@ -109,7 +106,9 @@ App = {
             </div>
             <div class="card-footer">
               <input id="" type="hidden" value="${certId}" />
-              <a id="" href="#" class="btn btn-primary" onclick="App.mintCertificate('${certId}')">Mint</a>
+              <button class="btn btn-primary" onclick="App.mintCertificate('${certId}')"
+              ${certStatus != '1' ? "disabled" : ""}
+              >Mint</button>
             </div>
           </div>`;
           htmlOutput += certificateHtmlElement;
@@ -148,7 +147,6 @@ App = {
     createCertification: async (title, validDays) => {
       try {
         const result = await App.instanceCertification.createCertificate(title, App.currentAccount, validDays, {from:App.currentAccount});
-        console.log("y aca");
         console.log(result.logs[0].args);
         window.location.reload();
       } catch (error) {
